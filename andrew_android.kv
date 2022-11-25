@@ -1,0 +1,204 @@
+#:kivy 2.1
+<TaxLabel@MDLabel>:
+    font_size: 16
+    size: 150, 20
+    size_hint: None, None
+    halign: 'right'
+<CustLabel@MDLabel>:
+    font_size: 15
+    size: 200, 20
+    size_hint: None, None
+    halign: 'left'
+<Input@MDTextField>:
+    font_size: 16
+    size_hint: None, None
+    size: 150, 20
+    multiline: False
+    write_tab: False
+    readonly: False
+    halign: 'right'
+    text_color_normal: "green"
+    text_color_focus: "green"  
+    hint_text_color: (1, 0, 0, 1) 
+
+
+<AppButton@MDRectangleFlatButton>:
+    size: 150, 20
+    size_hint: None, None
+    theme_text_color: "Custom"
+    text_color: "lightblue"
+    line_color: "lightblue"
+    halign: "right"
+
+MDFloatLayout:
+    MDScreen:
+        MDLabel:
+            text: '''Үндсэн цалин ба татварын тооцоолуур'''
+            pos_hint: {"center_x": .5, "center_y": .94}
+            halign: "center"
+            font_size: 19
+            bold: True
+            background_color: 'black'
+
+        TaxLabel:
+            id: k_csst
+            text: '81,694.98'
+            pos_hint: {"center_x": .76, "center_y": .8}
+        CustLabel:
+            text: 'НДШ - Ажил олгогч'
+            id: НДШ - Ажил олгогч
+            pos_hint: {"center_x": .314, "center_y": .8}
+
+        Input:
+            id: k_bs
+            text: '605,148.00'
+            pos_hint: {"center_x": .76, "center_y": .75}
+            focus: True
+            on_focus: app.refresh_number_display()
+        CustLabel:
+            text: 'Үндсэн цалин'
+            id: Үндсэн цалин
+            bold: True
+            pos_hint: {"center_x": .314, "center_y": .75}
+
+        TaxLabel:
+            id: k_psst
+            text: '69,592.02'
+            pos_hint: {"center_x": .76, "center_y": .7}
+        CustLabel:
+            text: 'НДШ - Хувь хүн'
+            id: НДШ - Хувь хүн
+            pos_hint: {"center_x": .314, "center_y": .7}
+
+        TaxLabel:
+            id: k_psstd
+            text: '535,555.98'
+            pos_hint: {"center_x": .76, "center_y": .65}
+        CustLabel:
+            text: 'НДШ - Хувь хүнийг хасав'
+            id: НДШ - Хувь хүнийг хасав
+            pos_hint: {"center_x": .314, "center_y": .65}
+
+        TaxLabel:
+            id: k_pit
+            text: '53,555.60'
+            pos_hint: {"center_x": .76, "center_y": .6}
+        CustLabel:
+            text: 'ХХОАТ'
+            id: ХХОАТ
+            pos_hint: {"center_x": .314, "center_y": .6}
+
+        TaxLabel:
+            id: k_dis
+            text: '18,000.00'
+            pos_hint: {"center_x": .76, "center_y": .55}
+            color: 'purple'
+        CustLabel:
+            text: 'Хөнгөлөлт'
+            id: Хөнгөлөлт
+            pos_hint: {"center_x": .314, "center_y": .55}
+
+        Input:
+            id: k_thp
+            text: '500,000.38'
+            pos_hint: {"center_x": .76, "center_y": .5}
+            focus: True
+        CustLabel:
+            text: 'Гарт авах цалин'
+            id: Гарт авах цалин
+            pos_hint: {"center_x": .314, "center_y": .5}
+
+        RelativeLayout:
+            size_hint: None, None
+            pos_hint: {"center_x": .89, "center_y": .485}
+            CheckBox:
+                id: k_dchk
+                color: 'purple'
+                size_hint: None, None
+                size: 18, 18
+        CustLabel:
+            text: 'Татвар'
+            id: Татвар
+            bold: True
+            pos_hint: {"center_x": .314, "center_y": .4}
+
+        TaxLabel:
+            text: '13.5 %'
+            pos_hint: {"center_x": .76, "center_y": .35}
+        CustLabel:
+            text: 'Ажил олгогч'
+            id: Ажил олгогч
+            pos_hint: {"center_x": .314, "center_y": .35}
+            
+        TaxLabel:
+            text: '11.5 %' 
+            pos_hint: {"center_x": .76, "center_y": .3}
+        CustLabel:
+            text: 'Хувь хүн'
+            id: Хувь хүн
+            pos_hint: {"center_x": .314, "center_y": .3}
+
+        TaxLabel:
+            text: '10.0 %'
+            pos_hint: {"center_x": .76, "center_y": .25}
+        CustLabel:
+            text: 'ХХОАТ'
+            id: ХХОАТ
+            pos_hint: {"center_x": .314, "center_y": .25}
+
+        AppButton:
+            id: btnb
+            text: "Тоцоо(ҮЦ)"
+            pos_hint: {"center_x": .185, "center_y": .17}
+            halign: 'left'
+            on_release: app.calculate_basic_salary()
+        AppButton:
+            id: btnt
+            text: "Тоцоо(ГЦ)"
+            pos_hint: {"center_x": .82, "center_y": .17}
+            halign: 'left'
+            on_release: app.calculate_take_home_pay()
+        AppButton:
+            id: bt
+            size_hint: .76, .017
+            text: "Гарах"
+            pos_hint: {"center_x": .5, "center_y": .08}
+            halign: 'center'
+            on_release: app.stop()
+
+
+
+
+
+    TaxLabel:
+        text: "4200000"
+        id: k_stul
+        color: 'white'
+    TaxLabel:
+        text: "20000"
+        id: k_d01
+        color: 'white'
+    TaxLabel:
+        text: "18000"
+        id: k_d02
+        color: 'white'
+    TaxLabel:
+        text: "16000"
+        id: k_d03
+        color: 'white'
+    TaxLabel:
+        text: "14000"
+        id: k_d04
+        color: 'white'
+    TaxLabel:
+        text: "12000"
+        id: k_d05
+        color: 'white'
+    TaxLabel:
+        text: "10000"
+        id: k_d06
+        color: 'white'
+    TaxLabel:
+        text: "0"
+        id: k_d07
+        color: 'white'
