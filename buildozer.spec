@@ -1,10 +1,10 @@
 [app]
 
 # (str) Title of your application
-title = Salary_&_Tax
+title = Salary & Tax
 
 # (str) Package name
-package.name = Salary_&_Tax
+package.name = Salary & Tax
 
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
@@ -33,11 +33,11 @@ version = 0.1
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
-# version.filename = %(source.dir)s/main.py
+# version.filename = %(source.dir)s/andrew_android.py
 
 # (list) Application requirements
-# comma separated e.g. requirements = sqlite3,kivy, kivymd
-requirements = python3,kivy
+# comma separated e.g. requirements = sqlite3,kivy,kivymd
+requirements = python3,kivy,kivymd
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -60,7 +60,7 @@ orientation = portrait
 #
 
 #
-# author = © Copyright Info
+# author = ï¿½ Copyright Info
 
 # change the major version of python used by the app
 osx.python_version = 3
